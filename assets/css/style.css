@@ -2,10 +2,18 @@
 	box-sizing: border-box;
 }
 
+/* For Sticky Footer */
+html, body {
+	height: 100%;
+}
+
 body {
 	background: url("../images/background.jpg");
 	background-position: center top;
 	background-repeat: no-repeat;
+	/* For Sticky Footer */
+	display: flex;
+	flex-direction: column;	
 }
 
 header {
@@ -18,4 +26,14 @@ header {
 	padding-bottom: 5px;
 	padding-left: 30px;
 	text-shadow: 0 0 0.2em #8F7, 0 0 0.2em #8F7;
+}
+
+section {
+	flex: 1 0 auto;
+}
+
+footer {
+	text-align: center;
+	color: black;
+	font-size: 10px;
 }
