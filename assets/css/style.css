@@ -7,3 +7,15 @@ body {
 	background-position: center top;
 	background-repeat: no-repeat;
 }
+
+header {
+	font-size: 30px;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: #1A1110;
+	font-family: "Russo One";
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	text-shadow: 0 0 0.2em #8F7, 0 0 0.2em #8F7;
+}
