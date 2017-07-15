@@ -2,9 +2,25 @@
 	box-sizing: border-box;
 }
 
+h2, p {
+	font-family: "Lora", serif;
+}
+
+p {
+	font-weight: bold;
+}
+
 /* For Sticky Footer */
 html, body {
 	height: 100%;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 20px;
+	/*border: 1px solid white;*/
 }
 
 body {
@@ -20,7 +36,7 @@ header {
 	font-size: 30px;
 	background-color: rgba(255, 255, 255, 0.3);
 	color: #1A1110;
-	font-family: "Russo One";
+	font-family: "Russo One", serif;
 	margin-top: 15px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -32,10 +48,38 @@ section {
 	flex: 1 0 auto;
 	width: 85%;
 	margin: auto;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 10px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+#characterSelection {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 100px;
+}
+
+.character {
+	display: inline-block;
+	background-color: rgba(255, 255, 255, .2);
+	padding: 10px;
+	margin: auto;
+	border-radius: 5px;
+}
+
+.character:hover {
+	box-shadow: 0px 0px 15px 5px #51ff0d; 
+	-webkit-box-shadow: 0px 0px 15px 5px #51ff0d;
+	-moz-box-shadow: 0px 0px 15px 5px #51ff0d;
+}
+
+.character img {
+	margin-bottom: 10px;
+}
+
+.character p {
+	text-align: center;
 }
 
 footer {

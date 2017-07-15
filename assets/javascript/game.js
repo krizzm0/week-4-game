@@ -2,11 +2,11 @@
 
 $(document).ready(function() {
 
-	
+var playerCharacter;
 
 
-
-
-
+	$(".character").click( function() { 
+		$("#characterSelection").html("<p>Test</p>")
+	});
 
 });
