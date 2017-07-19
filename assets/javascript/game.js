@@ -1,3 +1,4 @@
+
 var playerCharacter;
 var enemyCharacter;
 var enemyChosen = false;
@@ -25,6 +26,7 @@ $(document).ready(function() {
 			enemyCharacter = yoda;
 			$("#initialHTML").hide();
 			$("#fightHTML").removeClass("invisible").addClass("visible");
+			$(".fightSection").append("<img src='assets/images/attack.png' id='attackSaber'>");
 			$(".fightSection").append(enemyCharacter);
 		}
 	});
@@ -45,6 +47,7 @@ $(document).ready(function() {
 			enemyCharacter = vadar;
 			$("#initialHTML").hide();
 			$("#fightHTML").removeClass("invisible").addClass("visible");
+			$(".fightSection").append("<img src='assets/images/attack.png' id='attackSaber'>");
 			$(".fightSection").append(enemyCharacter);
 		}
 	});
@@ -65,6 +68,7 @@ $(document).ready(function() {
 			enemyCharacter = luke;
 			$("#initialHTML").hide();
 			$("#fightHTML").removeClass("invisible").addClass("visible");
+			$(".fightSection").append("<img src='assets/images/attack.png' id='attackSaber'>");
 			$(".fightSection").append(enemyCharacter);
 		}
 	});
@@ -85,8 +89,11 @@ $(document).ready(function() {
 			enemyCharacter = darth;
 			$("#initialHTML").hide();
 			$("#fightHTML").removeClass("invisible").addClass("visible");
+			$(".fightSection").append("<img src='assets/images/attack.png' id='attackSaber'>");
 			$(".fightSection").append(enemyCharacter);
 		}
 	});
 
-});
+
+
+}); // End document.ready
