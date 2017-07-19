@@ -26,28 +26,44 @@
 
     <section id="gameContent">
 
-        <h2>Select Your Character</h2>
+        <!-- Initial Page HTML -->
+        <div class="visible" id="initialHTML">
 
-        <div id="characterSelection">
-            <div class="character" id="yoda">
-                <img src="assets/images/yoda.png">
-                <p>Master Yoda</p>
+            <h2 class="greenTextGlow">Select Your Character</h2>
+
+            <div class="characterSelection">
+                <!-- Yoda -->
+                <div class="character hoverGlowGreen notChosen" id="yoda">
+                    <img src="assets/images/yoda.png">
+                    <p>Master Yoda</p>
+                </div>
+
+                <!-- Darth Vadar -->
+                <div class="character hoverGlowGreen notChosen" id="vadar">
+                    <img src="assets/images/vadar.png">
+                    <p>Darth Vadar</p>
+                </div>
+
+                <!-- Luke Skywalker -->
+                <div class="character hoverGlowGreen notChosen" id="luke">
+                    <img src="assets/images/luke.png">
+                    <p>Luke Skywalker</p>
+                </div>
+
+                <!-- Darth Vadar -->
+                <div class="character hoverGlowGreen notChosen" id="darth">
+                    <img src="assets/images/darthMaul.png">
+                    <p>Darth Maul</p>
+                </div>
+
             </div>
 
-            <div class="character" id="vadar">
-                <img src="assets/images/vadar.png">
-                <p>Darth Vadar</p>
-            </div>
-
-            <div class="character" id="luke">
-                <img src="assets/images/luke.png">
-                <p>Luke Skywalker</p>
-            </div>
-
-            <div class="character" id="darth">
-                <img src="assets/images/darthMaul.png">
-                <p>Darth Maul</p>
-            </div>
+        </div>  <!-- End Initial Page HTML  -->
+        
+        <!-- Fight Section HTML -->
+        <div class="invisible" id="fightHTML">
+            <h2 class="redTextGlow">FIGHT!!</h2>
+            <div class="characterSelection fightSection"></div>
         </div>
 
     </section>
