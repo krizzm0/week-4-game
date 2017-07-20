@@ -36,14 +36,14 @@
                 <!-- Yoda -->
                 <div class="character hoverGlowGreen notChosen" id="yoda">
                     <img src="assets/images/yoda.png">
-                    <p class="HP">120</p>
+                    <p class="HP">80HP</p>
                     <p>Master Yoda</p>
                 </div>
 
                 <!-- Darth Vadar -->
                 <div class="character hoverGlowGreen notChosen" id="vadar">
                     <img src="assets/images/vadar.png">
-                    <p class="HP">180HP</p>
+                    <p class="HP">200HP</p>
                     <p>Darth Vadar</p>
                 </div>
 
@@ -69,7 +69,9 @@
         <div class="invisible" id="fightHTML">
             <h2 class="greenTextGlow">FIGHT!!</h2>
             <div class="characterSelection fightSection"></div>
-            <button type="button">Attack</button>
+            <button type="button" id="attackBTN">Attack</button>
+            <button type="button" class="invisible" id="nextBTN">Next Enemy</button>
+            <button type="button" class="invisible" id="resetBTN">Try Again</button>
             <div id="messageBox"></div>
         </div>
 
