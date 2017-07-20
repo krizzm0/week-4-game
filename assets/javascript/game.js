@@ -1,3 +1,4 @@
+var gameWon = false;
 
 var player = {
 	name: undefined,
@@ -36,7 +37,6 @@ var darth = {
 	isDead: false
 };
 
-// var enemyChosen = false;
 var yodaHTML;
 var vadarHTML;
 var lukeHTML;
@@ -52,22 +52,21 @@ $(document).ready(function() {
 			yodaHTML = $("#yoda")[0].outerHTML;
 			player.html = yodaHTML;
 			player.name = "Master Yoda";
-			player.hp = 80;
-			player.attackPWR = 30;
-			player.attackINCR = 20;
+			player.hp = 120;
+			player.attackPWR = 8;
+			player.attackINCR = 8;
 			$("#yoda").addClass("chosenUserPick");
 			$(".notChosen").removeClass("hoverGlowGreen").addClass("hoverGlowRed");
 			$(".fightSection").append(player.html);
 			$("h2").first().removeClass("greenTextGlow").addClass("redTextGlow").text("Select Your Enemy");
 		} else if (player.name !== "Master Yoda" && yoda.isDead === false) {
-			// enemyChosen = true;
 			$("#yoda").removeClass("hoverGlowRed");
 			$("#yoda .HP").addClass("enemyHP");
 			yodaHTML = $("#yoda")[0].outerHTML;
 			enemy.html = yodaHTML;
 			enemy.name = "Master Yoda";
 			enemy.hp = 120;
-			enemy.counterPWR = 50;
+			enemy.counterPWR = 40;
 			enemy.isDead = false;
 			$("#initialHTML").hide();
 			// $("#fightHTML").removeClass("invisible").addClass("visible");
@@ -84,21 +83,20 @@ $(document).ready(function() {
 			vadarHTML = $("#vadar")[0].outerHTML;
 			player.html = vadarHTML;
 			player.name = "Darth Vadar";
-			player.hp = 200;
-			player.attackPWR = 50;
-			player.attackINCR = 20;
+			player.hp = 150;
+			player.attackPWR = 6;
+			player.attackINCR = 6;
 			$("#vadar").addClass("chosenUserPick");
 			$(".notChosen").removeClass("hoverGlowGreen").addClass("hoverGlowRed");
 			$(".fightSection").append(player.html);
 			$("h2").first().removeClass("greenTextGlow").addClass("redTextGlow").text("Select Your Enemy");
 		} else if (player.name !== "Darth Vadar" && vadar.isDead === false) {
-			// enemyChosen = true;
 			$("#vadar").removeClass("hoverGlowRed");
 			$("#vadar .HP").addClass("enemyHP");
 			vadarHTML = $("#vadar")[0].outerHTML;
 			enemy.html = vadarHTML;
 			enemy.name = "Darth Vadar";
-			enemy.hp = 200;
+			enemy.hp = 190;
 			enemy.counterPWR = 20;
 			enemy.isDead = false;
 			$("#initialHTML").hide();
@@ -116,22 +114,21 @@ $(document).ready(function() {
 			lukeHTML = $("#luke")[0].outerHTML;
 			player.html = lukeHTML;
 			player.name = "Luke Skywalker";
-			player.hp = 150;
-			player.attackPWR = 100;
-			player.attackINCR = 0;
+			player.hp = 180;
+			player.attackPWR = 11;
+			player.attackINCR = 11;
 			$("#luke").addClass("chosenUserPick");
 			$(".notChosen").removeClass("hoverGlowGreen").addClass("hoverGlowRed");
 			$(".fightSection").append(player.html);
 			$("h2").first().removeClass("greenTextGlow").addClass("redTextGlow").text("Select Your Enemy");
 		} else if (player.name !== "Luke Skywalker" && luke.isDead === false) {
-			// enemyChosen = true;
 			$("#luke").removeClass("hoverGlowRed");
 			$("#luke .HP").addClass("enemyHP");
 			lukeHTML = $("#luke")[0].outerHTML;
 			enemy.html = lukeHTML;
 			enemy.name = "Luke Skywalker";
-			enemy.hp = 150;
-			enemy.counterPWR = 20;
+			enemy.hp = 180;
+			enemy.counterPWR = 5;
 			enemy.isDead = false;
 			$("#initialHTML").hide();
 			// $("#fightHTML").removeClass("invisible").addClass("visible");
@@ -148,22 +145,21 @@ $(document).ready(function() {
 			darthHTML = $("#darth")[0].outerHTML;
 			player.html = darthHTML;
 			player.name = "Darth Maul";
-			player.hp = 130;
-			player.attackPWR = 0;
-			player.attackINCR = 0;
+			player.hp = 180;
+			player.attackPWR = 4;
+			player.attackINCR = 4;
 			$("#darth").addClass("chosenUserPick");
 			$(".notChosen").removeClass("hoverGlowGreen").addClass("hoverGlowRed");
 			$(".fightSection").append(player.html);
 			$("h2").first().removeClass("greenTextGlow").addClass("redTextGlow").text("Select Your Enemy");
 		} else if (player.name !== "Darth Maul" && darth.isDead === false) {
-			// enemyChosen = true;
 			$("#darth").removeClass("hoverGlowRed");
 			$("#darth .HP").addClass("enemyHP");
 			darthHTML = $("#darth")[0].outerHTML;
 			enemy.html = darthHTML;
 			enemy.name = "Darth Maul";
-			enemy.hp = 130;
-			enemy.counterPWR = 5;
+			enemy.hp = 180;
+			enemy.counterPWR = 25;
 			enemy.isDead = false;
 			$("#initialHTML").hide();
 			// $("#fightHTML").removeClass("invisible").addClass("visible");
@@ -211,14 +207,23 @@ $(document).ready(function() {
 	$("#nextBTN").on("click", function() {
 		enemyKilled();
 		// $("#fightHTML").removeClass("visible").addClass("invisible");
-		$("#fightHTML").hide();
-		$("#messageBox").html(" ");
-		$(".fightSection div:nth-child(3)").remove();
-		$(".fightSection #attackSaber").remove();
-		$("#initialHTML").show();
-		$("#nextBTN").hide();
-		$("#attackBTN").show();
+		if (gameWon === true) {
+			$("#fightHTML").hide();
+			$("#initialHTML h2").html("<h2>You Won!</h2>");
+			$("#initialHTML .characterSelection div").remove();
+			$("#initialHTML").show();
+		} else {
+			$("#fightHTML").hide();
+			$("#messageBox").html(" ");
+			$(".fightSection div:nth-child(3)").remove();
+			$(".fightSection #attackSaber").remove();
+			$("#initialHTML").show();
+			$("#nextBTN").hide();
+			$("#attackBTN").show();
+		}
 	});
+
+
 }); // End document.ready
 
 
@@ -233,6 +238,10 @@ function enemyKilled() {
 	} else if (enemy.name === "Darth Maul") {
 		darth.isDead = true;
 	}
+
+	if (player.killCount === 3) {
+		gameWon = true;
+	}
 }
 
 function gameOver() {
@@ -240,4 +249,8 @@ function gameOver() {
 	$("#resetBTN").show().on("click", function() {
 		location.reload();
 	});
+}
+
+function gameWin() {
+
 }
