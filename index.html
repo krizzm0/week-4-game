@@ -17,6 +17,8 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
+    <!-- jQuery Color Animation Library -->
+    <script src="assets/javascript/jquery.color-2.1.2.js"></script>
 </head>
 
 <body>
@@ -24,11 +26,12 @@
     <header>
         <h1>Star Wars: The RPG Game</h1>
     </header>
-
-    <section id="gameContent">
+    
+    <!-- Game Content -->
+    <section>
 
         <!-- Initial Page HTML -->
-        <div class="visible" id="initialHTML">
+        <div id="initialHTML">
 
             <h2 class="greenTextGlow">Select Your Character</h2>
 
@@ -36,6 +39,7 @@
                 <!-- Yoda -->
                 <div class="character hoverGlowGreen notChosen" id="yoda">
                     <img src="assets/images/yoda.png">
+                    <img class="skullIMG invisible" src="assets/images/dead.png">
                     <p class="HP">120HP</p>
                     <p>Master Yoda</p>
                 </div>
@@ -43,26 +47,32 @@
                 <!-- Darth Vadar -->
                 <div class="character hoverGlowGreen notChosen" id="vadar">
                     <img src="assets/images/vadar.png">
-                    <p class="HP">150HP</p>
+                    <img class="skullIMG invisible" src="assets/images/dead.png">
+                    <p class="HP">190HP</p>
                     <p>Darth Vadar</p>
                 </div>
 
                 <!-- Luke Skywalker -->
                 <div class="character hoverGlowGreen notChosen" id="luke">
                     <img src="assets/images/luke.png">
+                    <img class="skullIMG invisible" src="assets/images/dead.png">
                     <p class="HP">180HP</p>
                     <p>Luke Skywalker</p>
                 </div>
 
-                <!-- Darth Vadar -->
+                <!-- Darth Maul -->
                 <div class="character hoverGlowGreen notChosen" id="darth">
                     <img src="assets/images/darthMaul.png">
+                    <img class="skullIMG invisible" src="assets/images/dead.png">
                     <p class="HP">180HP</p>
                     <p>Darth Maul</p>
                 </div>
 
             </div>
-        <button type="button" class="invisible" id="playAgainBTN">Play Again</button>
+
+            <button type="button" class="invisible" id="playAgainBTN">
+                Play Again
+            </button>
 
         </div>  <!-- End Initial Page HTML  -->
         
@@ -71,9 +81,9 @@
             <h2 class="greenTextGlow">FIGHT!!</h2>
             <div class="characterSelection fightSection"></div>
             <button type="button" id="attackBTN">Attack</button>
+            <div id="messageBox"></div>
             <button type="button" class="invisible" id="nextBTN">Next Enemy</button>
             <button type="button" class="invisible" id="resetBTN">Try Again</button>
-            <div id="messageBox"></div>
         </div>
 
     </section>
