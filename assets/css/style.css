@@ -39,6 +39,10 @@ html, body {
 	text-shadow: 0 0 0.2em #ff0000, 0 0 0.1em #ff0000;
 }
 
+.yellowTextGlow {
+	text-shadow: 0 0 0.2em #FFFF00, 0 0 0.1em #FFFF00;
+}
+
 body {
 	background: url("../images/background.jpg");
 	background-position: center top;

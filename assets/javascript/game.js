@@ -209,8 +209,16 @@ $(document).ready(function() {
 		// $("#fightHTML").removeClass("visible").addClass("invisible");
 		if (gameWon === true) {
 			$("#fightHTML").hide();
-			$("#initialHTML h2").html("<h2>You Won!</h2>");
+			$("#initialHTML h2").removeClass("redTextGlow").addClass("yellowTextGlow");
+			$("#initialHTML h2").html("Congratulations");
+			$("#initialHTML h2").append("<br>You Have Won the Game!");
 			$("#initialHTML .characterSelection div").remove();
+			$("#initialHTML .characterSelection").append(player.html);
+			$("#playAgainBTN").removeClass("invisible");
+			$("#playAgainBTN").on("click", function() {
+				location.reload();
+			});
+			$(".character .HP").remove();
 			$("#initialHTML").show();
 		} else {
 			$("#fightHTML").hide();
